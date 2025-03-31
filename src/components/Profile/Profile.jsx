@@ -9,7 +9,8 @@ import '../Profile/profile.css';
 const Profile = () => {
   const { user, logout } = useUser();
   const { address } = useAddress();
-  const [orders, setOrders] = useState(null);
+  const [orders, setOrders] = useState();
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState('current');
@@ -41,6 +42,7 @@ const Profile = () => {
       if (!response.ok) throw new Error('Failed to fetch orders');
       
       const data = await response.json();
+      console.log(data);
       setOrders(data);
     } catch (err) {
       setError(err.message);
@@ -132,7 +134,7 @@ const Profile = () => {
                 </button>
               </div>
               <div className="orders-list">
-                {(activeTab === 'current' ? orders.currentOrders : orders.completedOrders).map(order => (
+                {(activeTab === 'current' ? orders.currentOrders : orders.completedOrders)?.map(order => (
                   <div key={order._id} className="order-card">
                     <div className="order-header">
                       <span>Order ID: {order._id}</span>

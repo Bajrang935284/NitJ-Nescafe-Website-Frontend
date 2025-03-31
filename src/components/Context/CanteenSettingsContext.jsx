@@ -9,29 +9,40 @@ export const CanteenProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Helper function to check if canteen is currently open
-  const isCanteenOpen = () => {
-    if (!settings) return false;
-
+  // Improved function to check if canteen is currently open
+ // In your CanteenProvider
+const isCanteenOpen = () => {
+  if (!settings || !settings.openTime || !settings.closeTime) return false;
+  
+  try {
     const now = new Date();
     const currentTime = now.getHours() * 60 + now.getMinutes();
-
+    
     // Parse open and close times
     const [openHours, openMinutes] = settings.openTime.split(':').map(Number);
     const [closeHours, closeMinutes] = settings.closeTime.split(':').map(Number);
-
+    
+    // If parsing failed, return false
+    if (isNaN(openHours) || isNaN(openMinutes) || isNaN(closeHours) || isNaN(closeMinutes)) {
+      console.error('Invalid time format in settings:', settings.openTime, settings.closeTime);
+      return false;
+    }
+    
     const openTimeInMinutes = openHours * 60 + openMinutes;
     const closeTimeInMinutes = closeHours * 60 + closeMinutes;
-
+    
     // Scenario 1: Open and close times are on the same day
     if (openTimeInMinutes <= closeTimeInMinutes) {
       return currentTime >= openTimeInMinutes && currentTime <= closeTimeInMinutes;
     }
-
+    
     // Scenario 2: Closing time crosses midnight
-    // Check if current time is after opening time OR before closing time
     return currentTime >= openTimeInMinutes || currentTime <= closeTimeInMinutes;
-  };
+  } catch (error) {
+    console.error('Error checking if canteen is open:', error);
+    return false;
+  }
+};
 
   // Function to fetch settings from backend
   const fetchSettings = async () => {
@@ -62,14 +73,16 @@ export const CanteenProvider = ({ children }) => {
   }, []);
 
   return (
-    <CanteenContext.Provider value={{
-      settings,
-      isLoading,
-      error,
-      fetchSettings,
-      updateSettings,
-      isCanteenOpen
-    }}>
+    <CanteenContext.Provider 
+      value={{
+        settings,
+        isLoading,
+        error,
+        fetchSettings,
+        updateSettings,
+        isCanteenOpen
+      }}
+    >
       {children}
     </CanteenContext.Provider>
   );
