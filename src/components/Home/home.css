@@ -123,10 +123,17 @@
 
 
 @media (max-width: 768px) {
-  .overlay-content {
-    width: 90%;
+  .overlay-content  {
+    width: 89%;
     text-align: center;
-  }
+    color: white;
+    margin-top: -73px;
+    font-size: -13px;
+    font-size: 26px;
+    font-family: revert;
+    font-weight: 800;
+    margin-left: 20px;
+}
   
   .action-button {
     width: 100%;

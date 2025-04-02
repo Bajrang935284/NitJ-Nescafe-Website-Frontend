@@ -6,7 +6,7 @@ import { useCart } from '../Context/CartContext';
 import axios from "axios";
 import './Payment.css';
 import './OrderConfirmationModal.css';
-
+import BackAero from '../orders/BackAero';
 const OrderConfirmationModal = ({ orderDetails, onClose }) => {
   const navigate = useNavigate();
 
@@ -19,13 +19,16 @@ const OrderConfirmationModal = ({ orderDetails, onClose }) => {
     navigate('/');
     onClose();
   };
+  const handleBack = () =>{
+    navigate('/');
+  }
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
         <div className="success-icon">✓</div>
         <h2>Order Confirmed!</h2>
-        
+         <div className='backToHome' onClick={handleBack}>X</div>
         <div className="order-details">
           <p>
             <span>Order ID:</span>
@@ -64,6 +67,9 @@ const Payment = () => {
   const handlePaymentMethodChange = (e) => {
     setSelectedPaymentMethod(e.target.value);
   };
+  const handleBack = () =>{
+    navigate('/checkout');
+  }
 
   const handlePlaceOrder = async () => {
     setIsOrderProcessing(true);
@@ -122,7 +128,11 @@ const Payment = () => {
 
   return (
     <div className="payment-page">
-      <h2 className="page-heading">Secure Payment</h2>
+      <div className='page-heading'>
+        <div className='backArrow' onClick={handleBack}> <BackAero/> </div>
+      <h3 className="payment-heading"> Payment Options</h3>
+      </div>
+      
       
       <div className="payment-layout">
         <div className="order-summary">

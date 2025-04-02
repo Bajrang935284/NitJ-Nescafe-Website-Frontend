@@ -185,7 +185,7 @@
   /* Show the logo instead of hiding it */
   .header-logo {
     display: block !important;
-    margin-left: 0;
+    margin-left: 10px;
   }
 
   /* Make the logo smaller for mobile */
@@ -204,6 +204,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 0 !important;
+    margin-right: 8px !important;
     padding: 0;
     gap: 0;
   }

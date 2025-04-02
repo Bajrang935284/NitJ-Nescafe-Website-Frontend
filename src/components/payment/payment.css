@@ -1,19 +1,28 @@
 /* Payment Page Styles */
 .payment-page {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+    /* margin: 2rem auto; */
+    /* padding: 0 1.5rem; */
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
+    position: relative;
+    top: 0;
   }
   
   .page-heading {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #2d3748;
-    text-align: center;
+    font-weight: 700;
+    display: flex;
     margin-bottom: 1rem;
-  }
+    position: sticky;
+    top: 0;  /* Ensures the element sticks to the top */
+    background-color: white; /* Optional: Prevents overlap issues */
+    z-index: 1000;  /* Ensures it stays above other content */
+    padding: 10px; /* Optional: Improves appearance */
+}
+
   
   .payment-layout {
     display: grid;
@@ -125,8 +134,26 @@
     .payment-layout {
       grid-template-columns: 1fr;
     }
+    .payment-heading {
+      font-size: 1rem;
+      color: #2d3748;
+      font-weight: 700;
+      display: flex
+;
+      /* margin-bottom: -2rem; */
+      margin-top: 4px;
+      margin-left: 54px;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 1000;
+      /* padding: 10px; */
+  }
     
     .payment-page {
-      padding: 0 1rem;
+      /* padding: 0 1rem; */
+      position: relative;
+      top: 0;
+
     }
   }

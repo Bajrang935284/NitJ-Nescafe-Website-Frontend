@@ -3,7 +3,7 @@ import React from 'react'
 const ProfileIcon = () => {
   return (
     <div>
-      <svg
+      {/* <svg
   fill="none"
   height="35px"
   viewBox="0 0 26 26"
@@ -33,7 +33,19 @@ const ProfileIcon = () => {
     strokeWidth="1.6"
   />
 </svg>
-<svg aria-hidden="true" height="20" width="20" class="sc-gdyeKB gOWGds"><use xlink:href="/food/sprite-CiiAtHUR.svg#profile20"></use></svg>
+<svg aria-hidden="true" height="20" width="20" class="sc-gdyeKB gOWGds"><use xlink:href="/food/sprite-CiiAtHUR.svg#profile20"></use></svg> */}
+<img 
+  src="https://www.seekpng.com/png/small/41-410093_circled-user-icon-user-profile-icon-png.png" 
+  alt="Cropped Image"
+  style={{
+    width: "40px",  // Adjust as needed
+    height: "40px", // Adjust as needed
+     borderRadius: "55%",
+     clipPath: "circle(45% at center)",
+    objectFit: "cover"
+  }} 
+/>
+
 
     </div>
   )
