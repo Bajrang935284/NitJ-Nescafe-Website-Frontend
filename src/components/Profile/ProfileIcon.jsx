@@ -5,7 +5,7 @@ const ProfileIcon = () => {
     <div>
       <svg
   fill="none"
-  height="25px"
+  height="35px"
   viewBox="0 0 26 26"
   width="34px"
   style={{ color: '#FFFFFF' }}
@@ -33,6 +33,7 @@ const ProfileIcon = () => {
     strokeWidth="1.6"
   />
 </svg>
+<svg aria-hidden="true" height="20" width="20" class="sc-gdyeKB gOWGds"><use xlink:href="/food/sprite-CiiAtHUR.svg#profile20"></use></svg>
 
     </div>
   )

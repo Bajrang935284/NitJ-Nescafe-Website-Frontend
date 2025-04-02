@@ -24,15 +24,15 @@
    
 }
 .right-sidebar{
-    /* height: 75vh;
+    height: 75vh;
     width: 55vw;
-    border: 1px solid gray; */
-    flex: 1;
+    border: 1px solid gray; 
+     flex: 1; 
     background-color: #fafbfc;
     display: flex;
     flex-direction: column;
     height: 100%; /* Match parent height */
-    overflow: hidden; /* Hide overflow from parent */
+    /* overflow: hidden; Hide overflow from parent */
    
 }
 /* Orders Section */
@@ -307,4 +307,4 @@
     margin: auto;
     justify-content: center;
     cursor: pointer;
-  }
+  } 

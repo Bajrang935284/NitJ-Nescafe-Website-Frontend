@@ -415,3 +415,66 @@ button[type="submit"]:disabled {
   position: relative;
   /* Keep other existing styles */
 }
+/* Mobile Responsive Styles for Checkout Component */
+@media (max-width: 480px) {
+  /* Make the overall container fill the screen */
+  .checkout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+  }
+
+  /* Make the main content scrollable and leave space at bottom */
+  .checkout-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 80px; /* Reserve space for fixed bottom bar */
+  }
+
+  /* Reposition the Payment Card from left-section as a fixed bottom bar */
+  .left-section .payment-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+
+  /* Hide the Payment Card heading so only the button remains */
+  .left-section .payment-section .section-heading {
+    display: none;
+  }
+
+  /* Style the payment button to be prominent */
+  .left-section .payment-section .proceed-pay-btn {
+    font-size: 16px;
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+
+  /* Hide the cart total in the right-section as its info is now in the bottom bar */
+  .right-section .cart-total {
+    display: none;
+  }
+
+  /* Optionally, shorten cart item texts for a cleaner look */
+  .cart-item {
+    font-size: 14px;
+  }
+  .item-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+}

@@ -1,10 +1,10 @@
 /* Prevent page scrolling */
-body, html {
+/* body, html {
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Main container for the home page */
 .nescafe-home {
@@ -121,4 +121,22 @@ body, html {
   background: #563c39;
 }
 
+
+@media (max-width: 768px) {
+  .overlay-content {
+    width: 90%;
+    text-align: center;
+  }
+  
+  .action-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  /* Make sure buttons are large enough to tap on mobile */
+  .action-button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
 

@@ -156,60 +156,79 @@
 }
 
 @media (max-width: 768px) {
-  /* Ensure the header container is sticky at the top, with no extra margin */
+  /* Header container styles */
   .header-container {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     top: 0;
-    margin: 0;            /* Remove any margin */
-    padding: 0;           /* Remove extra padding if you want the header flush */
+    left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, #f5e1ff, #ffffff);
+    margin: 0;
+    padding: 0;
+    background-color: #302216;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
-  /* Adjust the header inside the container */
+  /* Main header styles */
   .header {
     width: 100%;
-    margin: 0 !important; /* Remove any margin */
-    padding: 10px !important;  /* Set desired padding (adjust as needed) */
+    padding: 1px 5px !important;
+    margin: 0 !important;
     display: flex;
-    margin-right: 0px !important;
-    margin-left: 13px !important;
     justify-content: space-between;
     align-items: center;
-    background: transparent; /* Background already on the container */
+    background: transparent;
   }
 
-  /* Hide the logo */
+  /* Show the logo instead of hiding it */
   .header-logo {
-    display: none !important;
+    display: block !important;
+    margin-left: 0;
   }
 
-  /* Adjust header-menu wrapper */
+  /* Make the logo smaller for mobile */
+  .header-logo h2 {
+    margin: 0;
+  }
+  
+  /* Adjust logo size if needed */
+  .header-logo svg {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Modify menu wrapper */
   .header-menu {
+    display: flex;
+    justify-content: flex-end;
     margin: 0 !important;
-    margin-left: 20px !important;
+    padding: 0;
     gap: 0;
   }
 
-  /* Hide all menu items except the profile item */
+  /* Hide all menu items by default */
   .header-menu-item {
     display: none !important;
-   
   }
+
+  /* Show only the profile item */
   .header-menu-item.profile-item {
     display: flex !important;
-    flex-direction: column;
-    align-items: center;
-   
+    margin-left: auto;
+    margin-right: 0;
   }
+
+  /* Hide the profile text but keep the icon */
   .profile-section {
     display: none !important;
   }
 
-  /* Reduce left margin for the address section */
+  
+  
+  /* Address section adjustments */
   .address {
-    margin-left: -12px !important; /* Adjust value as needed */
+    display: none !important; /* Hide address on mobile */
   }
 }

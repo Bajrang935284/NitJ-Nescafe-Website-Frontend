@@ -1,0 +1,401 @@
+/* profile.css */
+
+.profile {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .left-sidebar {
+    width: 250px;
+    background-color: #f6f6f6;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .right-sidebar {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .user {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .user h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .user h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+  }
+  
+  .orders, .addresses, .edit-profile, .customer-support {
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .orders:hover, .addresses:hover, .edit-profile:hover, .customer-support:hover {
+    background-color: #ebebeb;
+    border-radius: 5px;
+  }
+  
+  .orders p, .addresses p, .edit-profile p, .customer-support p {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #555;
+  }
+  
+  .logout {
+    margin-top: 30px;
+  }
+  
+  .logout h3 {
+    color: #ff5252;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s;
+  }
+  
+  .logout h3:hover {
+    color: #ff0000;
+  }
+  
+  /* Orders Container Styles */
+  .orders-container {
+    width: 100%;
+  }
+  
+  .order-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .order-tabs button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    position: relative;
+  }
+  
+  .order-tabs button.active {
+    color: #4caf50;
+    font-weight: 500;
+  }
+  
+  .order-tabs button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #4caf50;
+  }
+  
+  .orders-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .order-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .status {
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .status.pending {
+    background-color: #fff8e1;
+    color: #ffa000;
+  }
+  
+  .status.processing {
+    background-color: #e1f5fe;
+    color: #0288d1;
+  }
+  
+  .status.delivered {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }
+  
+  .status.cancelled {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+  
+  .order-details {
+    margin-bottom: 15px;
+  }
+  
+  .order-details p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .order-items h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #f0f0f0;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Edit Profile Form Styles */
+  .edit-profile-form {
+    max-width: 600px;
+  }
+  
+  .edit-profile-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  .edit-profile-form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .edit-profile-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Address Card Styles */
+  .address-card {
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .address-title {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .current-address {
+    margin-bottom: 20px;
+  }
+  
+  .current-address h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .current-address p {
+    margin: 5px 0 0;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .address-empty p {
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .change-address-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .change-address-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .address-selector {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  /* Customer Support Card Styles */
+  .customer-support-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+  }
+  
+  .customer-support-card h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .customer-support-card p {
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .profile {
+      padding: 10px;
+    }
+    
+    .profile-container {
+      flex-direction: column;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    
+    .left-sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 15px;
+    }
+    
+    .right-sidebar {
+      padding: 15px;
+    }
+    
+    .desktop-only {
+      display: none !important;
+    }
+    
+    .edit-profile-form h2, 
+    .customer-support-card h2 {
+      font-size: 20px;
+    }
+    
+    .form-group label {
+      font-size: 14px;
+    }
+    
+    .form-group input {
+      padding: 8px;
+      font-size: 14px;
+    }
+    
+    .edit-profile-form button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+    
+    .logout {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    /* Make the sidebar options more touch-friendly */
+    .edit-profile, .customer-support {
+      padding: 15px 0;
+    }
+    
+    .edit-profile p, .customer-support p {
+      text-align: center;
+      font-size: 16px;
+    }
+    
+    .user {
+      text-align: center;
+    }
+    
+    /* Add bottom spacing for the form on mobile */
+    .edit-profile-form, .customer-support-card {
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* For very small screens */
+  @media (max-width: 480px) {
+    .profile {
+      padding: 0;
+    }
+    
+    .edit-profile-form, .customer-support-card {
+      padding: 0;
+      background: none;
+      box-shadow: none;
+    }
+  }
